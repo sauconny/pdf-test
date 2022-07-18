@@ -32,10 +32,7 @@ export default function Sample() {
           <input onChange={onFileChange} type="file" />
         </div>
         <div className="Example__container__document">
-          <Document file={{
-              url:
-                 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
-             }} onLoadSuccess={onDocumentLoadSuccess} options={options}>
+          <Document file={file} onLoadSuccess={onDocumentLoadSuccess} options={options}> 
             {Array.from(new Array(numPages), (el, index) => (
               <Page key={`page_${index + 1}`} pageNumber={index + 1} />
             ))}
